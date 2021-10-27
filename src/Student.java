@@ -16,6 +16,9 @@ public class Student extends People{
         this.chemistryScores = chemistryScores;
 
     }
+    public double getMediumScores(){
+        return (mathScores+ physicsScores+chemistryScores)/3;
+    }
 
 
 

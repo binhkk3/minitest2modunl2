@@ -4,4 +4,5 @@ void print ();
 void edit (int id , T t);
 int search (int id);
 void  delete (int id );
+void sort();
 }

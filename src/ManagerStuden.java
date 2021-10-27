@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class ManagerStuden implements Manager<Student> {
     ArrayList<Student> liststudent;
@@ -27,16 +28,25 @@ liststudent.add(student);
         }
 
     }
+    @Override
+    public void sort(){
+        liststudent.sort(Comparator.comparingDouble(Student::getMediumScores));
+        print();
+    }
 
     @Override
     public int search(int id) {
         for (int i = 0; i < liststudent.size(); i++) {
             if (liststudent.get(i).getId() == id) {
-                System.out.println("có " + id + liststudent.get(i).getName());
-                return i;
+            return  i;
             }
         }
         return -1;
+    }
+
+    public void highestPoint(){
+        liststudent.sort(Comparator.comparingDouble(Student::getMediumScores));
+        System.out.println(liststudent.get(liststudent.size()-1));
     }
 
     @Override
